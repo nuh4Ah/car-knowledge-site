@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Emergency car help: flat tire, dead battery jump-start, overheating, and troubleshooting. Step-by-step guides for beginners.">
+    
+    <!-- ✅ iOS Web App Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Emergency Guide">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    
+    <title>Car Emergency Guide | Car Knowledge</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .emergency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+        .emergency-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        .emergency-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--danger);
+        }
+        .emergency-header {
+            padding: var(--spacing-lg);
+            text-align: center;
+            font-size: 64px;
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+        }
+        .emergency-header.warning {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+        }
+        .emergency-header.info {
+            background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+        }
+        .emergency-header.success {
+            background: linear-gradient(135deg, #10b981, #34d399);
+        }
+        .emergency-content {
+            padding: var(--spacing-lg);
+        }
+        .emergency-content h3 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: var(--spacing-md);
+        }
+        .emergency-content ol {
+            margin-left: var(--spacing-lg);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        .emergency-content ol li {
+            margin-bottom: var(--spacing-sm);
+        }
+        .emergency-content ul {
+            margin-left: var(--spacing-lg);
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+        .emergency-content ul li {
+            margin-bottom: var(--spacing-sm);
+        }
+        .emergency-content strong {
+            color: var(--danger);
+        }
+        .warning-box {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid var(--danger);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-md);
+            border-radius: 4px;
+        }
+        .warning-box p {
+            color: var(--text-dark);
+            font-weight: 600;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<nav role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+        <div class="nav-brand"><a href="/">🚗 Car Knowledge</a></div>
+        <ul class="nav-menu" role="menubar">
+            <li role="none"><a href="/" role="menuitem">Home</a></li>
+            <li role="none">
+                <button class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Learn</button>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="none"><a href="anatomy.html" role="menuitem">🔧 Car Anatomy</a></li>
+                    <li role="none"><a href="systems.html" role="menuitem">⚙️ How Systems Work</a></li>
+                    <li role="none"><a href="maintenance.html" role="menuitem">🛞 Basic Maintenance</a></li>
+                </ul>
+            </li>
+            <li role="none">
+                <button class="dropdown-toggle" role="menuitem" aria-haspopup="true" aria-expanded="false">Help</button>
+                <ul class="dropdown-menu" role="menu">
+                    <li role="none"><a href="warnings.html" role="menuitem">⚠️ Dashboard Warnings</a></li>
+                    <li role="none"><a href="emergency.html" role="menuitem">🚨 Emergency Guide</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="nav-search">
+            <input type="search" placeholder="Search topics..." aria-label="Search car topics">
+        </div>
+        <button class="mobile-search-btn" aria-label="Search">🔍</button>
+        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<header class="hero" role="banner" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+    <div class="hero-content">
+        <h1>🚨 Emergency Guide</h1>
+        <p class="hero-subtitle">Step-by-step help when things go wrong. Stay calm and follow these guides.</p>
+        <a href="#emergencies" class="cta-button" style="background: white; color: var(--danger); border-color: white;">Get Help Now →</a>
+    </div>
+</header>
+
+<main id="main-content" role="main">
+    <section id="emergencies" class="content-section">
+        <div class="container">
+            <h2>Common Car Emergencies</h2>
+            <p class="section-intro">
+                Bookmark this page. When you need it, these step-by-step guides will help you handle the situation safely.
+            </p>
+
+            <div class="emergency-grid">
+                <article class="emergency-card">
+                    <div class="emergency-header">🛞</div>
+                    <div class="emergency-content">
+                        <h3>How to Change a Flat Tire</h3>
+                        <ol>
+                            <li><strong>Safety first:</strong> Pull over to a safe, flat area away from traffic. Turn on hazard lights.</li>
+                            <li>Engage parking brake and place wheel chocks (or heavy rocks) behind the tires.</li>
+                            <li>Get your spare tire, jack, and lug wrench from the trunk.</li>
+                            <li>Loosen the lug nuts on the flat tire (don't remove yet) while the car is still on the ground.</li>
+                            <li>Position the jack under the car's jack point (check your manual) and raise the car until the tire is off the ground.</li>
+                            <li>Remove the lug nuts completely and take off the flat tire.</li>
+                            <li>Mount the spare tire, hand-tighten the lug nuts.</li>
+                            <li>Lower the car and tighten lug nuts in a star pattern.</li>
+                            <li>Drive slowly to a repair shop—spare tires are temporary!</li>
+                        </ol>
+                        <div class="warning-box">
+                            <p>⚠️ Never go under a car supported only by a jack. Don't drive fast on a spare tire.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="emergency-card">
+                    <div class="emergency-header">🔋</div>
+                    <div class="emergency-content">
+                        <h3>How to Jump-Start a Dead Battery</h3>
+                        <ol>
+                            <li>Park a working car close to yours, but don't let them touch.</li>
+                            <li>Turn both cars off. Open both hoods.</li>
+                            <li>Attach one <strong>red clamp</strong> to the <strong>dead battery's positive (+) terminal</strong>.</li>
+                            <li>Attach the other <strong>red clamp</strong> to the <strong>working battery's positive (+) terminal</strong>.</li>
+                            <li>Attach one <strong>black clamp</strong> to the <strong>working battery's negative (−) terminal</strong>.</li>
+                            <li>Attach the other <strong>black clamp</strong> to an <strong>unpainted metal surface</strong> on the dead car's engine (not the battery).</li>
+                            <li>Start the working car and let it run for 2–3 minutes.</li>
+                            <li>Try to start the dead car. If it starts, let both run for 5 minutes.</li>
+                            <li>Remove cables in reverse order: black from dead car, black from working car, red from working car, red from dead car.</li>
+                            <li>Drive the revived car for at least 20 minutes to recharge the battery.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <p>⚠️ Never let the red and black clamps touch each other. Sparks can cause an explosion.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="emergency-card">
+                    <div class="emergency-header warning">🌡️</div>
+                    <div class="emergency-content">
+                        <h3>What to Do If Your Car Overheats</h3>
+                        <ol>
+                            <li>Turn off the A/C immediately.</li>
+                            <li>Turn the heater to maximum heat with the fan on high (this pulls heat away from the engine).</li>
+                            <li>Pull over to a safe spot as soon as possible. Turn off the engine.</li>
+                            <li><strong>Wait at least 15‑20 minutes</strong> before opening the hood.</li>
+                            <li>Check the coolant reservoir level (never open the radiator cap when hot).</li>
+                            <li>If coolant is low and you have extra, add it to the reservoir once the engine cools.</li>
+                            <li>If it overheats again after adding coolant, <strong>call a tow truck</strong>. Don't keep driving.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <p>⚠️ Never open a hot radiator cap—boiling coolant can spray out and cause severe burns.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="emergency-card">
+                    <div class="emergency-header info">🔑</div>
+                    <div class="emergency-content">
+                        <h3>Car Won't Start? Troubleshooting</h3>
+                        <p style="margin-bottom: var(--spacing-md);"><strong>Try these in order:</strong></p>
+                        <ol>
+                            <li><strong>Check if the battery is dead:</strong> Lights dim or don't come on? Try jump-starting.</li>
+                            <li><strong>Make sure the car is in Park (automatic) or Neutral (manual).</strong> Some cars won't start in gear.</li>
+                            <li><strong>Check for a clicking sound:</strong> Click-click-click usually means a dead battery or bad starter.</li>
+                            <li><strong>Check the fuel gauge:</strong> Out of gas? It happens more than you'd think.</li>
+                            <li><strong>Try turning the steering wheel:</strong> If the wheel is locked, the ignition might not turn. Wiggle the wheel while turning the key.</li>
+                            <li><strong>Check if the key fob battery is dead</strong> (for push-button start cars). Hold the fob close to the start button.</li>
+                            <li>If none of this works, call roadside assistance or a tow truck.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <p>⚠️ Don't keep cranking the starter for more than 10 seconds at a time—you can damage it.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="emergency-card">
+                    <div class="emergency-header info">🔐</div>
+                    <div class="emergency-content">
+                        <h3>Locked Out of Your Car</h3>
+                        <p style="margin-bottom: var(--spacing-md);"><strong>Stay calm and try these options:</strong></p>
+                        <ol>
+                            <li><strong>Check all doors and the trunk.</strong> Sometimes one door is unlocked or the trunk has a release to the back seat.</li>
+                            <li><strong>Look for a spare key.</strong> Check your wallet, magnetic key holder under the car, or ask family if they have one.</li>
+                            <li><strong>Call roadside assistance</strong> if you have AAA, insurance roadside help, or manufacturer assistance (like OnStar).</li>
+                            <li><strong>Use your phone app</strong> if your car has remote unlock via smartphone (many newer models do).</li>
+                            <li><strong>Call a locksmith.</strong> Get quotes from 2–3 locksmiths. Average cost is $50–$150.</li>
+                            <li><strong>Last resort: Call the dealer.</strong> They can make a new key, but it's expensive ($200–$500) and may take time.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <p>⚠️ Never try to break a window yourself or use wire hangers—you can damage the door or trigger alarms. Always call a professional.</p>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="emergency-card">
+                    <div class="emergency-header success">❄️</div>
+                    <div class="emergency-content">
+                        <h3>Stuck in Snow or Mud</h3>
+                        <p style="margin-bottom: var(--spacing-md);"><strong>Get unstuck safely:</strong></p>
+                        <ol>
+                            <li><strong>Don't floor the gas pedal.</strong> Spinning tires dig you in deeper and can overheat the transmission.</li>
+                            <li><strong>Clear snow/mud from around the tires.</strong> Use a shovel, stick, or your hands (wear gloves).</li>
+                            <li><strong>Rock the car back and forth.</strong> Shift between Drive and Reverse gently, using momentum to break free.</li>
+                            <li><strong>Add traction under the tires.</strong> Use floor mats, cardboard, sand, kitty litter, or branches.</li>
+                            <li><strong>Let air out of tires slightly</strong> (to about 20 PSI) for more surface contact. Re-inflate at a gas station immediately after.</li>
+                            <li><strong>Get help pushing</strong> if safe. Have someone push while you gently accelerate.</li>
+                            <li><strong>Call a tow truck</strong> if you're really stuck or in a dangerous location.</li>
+                        </ol>
+                        <div class="warning-box">
+                            <p>⚠️ Never stand directly in front or behind a stuck car—it can lurch forward/backward suddenly. Keep exhaust pipe clear to avoid carbon monoxide buildup.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section" style="background: var(--bg-light);">
+        <div class="container">
+            <h2>What to Keep in Your Car</h2>
+            <p class="section-intro">
+                An emergency kit can save the day. Keep these items in your trunk at all times.
+            </p>
+
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <span class="benefit-icon">🔌</span>
+                    <h3>Jumper Cables</h3>
+                    <p>Essential for a dead battery. Get heavy-duty cables at least 12 feet long.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">🔦</span>
+                    <h3>Flashlight</h3>
+                    <p>With extra batteries. Emergencies often happen in the dark.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">🪧</span>
+                    <h3>Reflective Vest</h3>
+                    <p>Makes you visible to other drivers if you need to exit the car on a highway.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">🧰</span>
+                    <h3>Basic Tool Kit</h3>
+                    <p>Screwdrivers, pliers, wrench set. Useful for minor fixes.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">🩹</span>
+                    <h3>First Aid Kit</h3>
+                    <p>Bandages, antiseptic, pain relievers. Hope you never need it, but be prepared.</p>
+                </div>
+                <div class="benefit">
+                    <span class="benefit-icon">📱</span>
+                    <h3>Phone Charger</h3>
+                    <p>Car charger or power bank. A dead phone makes a bad situation worse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<footer role="contentinfo">
+    <div class="footer-content">
+        <div class="footer-about">
+            <h3>About Me</h3>
+            <p><strong>Created by:</strong> Will Andrie Ilagan</p>
+            <p><strong>Grade:</strong> 11</p>
+            <p><strong>Section:</strong> Bishop Alfredo Verzosa (BAV)</p>
+            <p class="educational-note">This project is for educational purposes only.</p>
+        </div>
+        
+        <div class="footer-copyright">
+            <p>&copy; 2026 Car Knowledge.</p>
+            <p>Built for beginners who wants to learn.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

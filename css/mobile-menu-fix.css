@@ -1,0 +1,58 @@
+/* ========================================
+   MOBILE MENU - COMPLETELY DISABLED
+   Navigation menu has been removed
+   ======================================== */
+
+/* Force hide any menu elements that might still exist */
+.nav-menu,
+.menu-toggle,
+.dropdown-toggle,
+.dropdown-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+/* Remove menu backdrop */
+body::after {
+    display: none !important;
+}
+
+/* Ensure no menu-open class effects */
+body.menu-open {
+    overflow: auto !important;
+}
+
+/* Clean navigation container */
+@media (max-width: 768px) {
+    .nav-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 16px;
+    }
+    
+    .nav-brand {
+        flex: 1;
+    }
+    
+    .mobile-search-btn {
+        flex-shrink: 0;
+    }
+    
+    .nav-search {
+        display: none; /* Hide desktop search on mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-search-btn {
+        display: none; /* Hide mobile search on desktop */
+    }
+    
+    .nav-search {
+        display: block;
+    }
+}

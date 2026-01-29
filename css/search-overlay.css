@@ -1,0 +1,510 @@
+/* ========================================
+   SEARCH OVERLAY - FULLY RESPONSIVE FOR ALL DEVICES
+   Auto-adjusts to any screen size automatically
+   ======================================== */
+
+/* ===== SEARCH OVERLAY BASE ===== */
+.search-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 99999 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    /* Fluid padding that scales with viewport */
+    padding: clamp(8px, 2vh, 24px) clamp(12px, 3vw, 32px);
+    /* iOS Safe Area Support */
+    padding-top: max(env(safe-area-inset-top), clamp(8px, 2vh, 24px));
+    padding-bottom: max(env(safe-area-inset-bottom), clamp(8px, 2vh, 24px));
+    padding-left: max(env(safe-area-inset-left), clamp(12px, 3vw, 32px));
+    padding-right: max(env(safe-area-inset-right), clamp(12px, 3vw, 32px));
+}
+
+.search-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== SEARCH CONTAINER - FULLY FLUID ===== */
+.search-container {
+    background: var(--bg-white);
+    /* Fluid border radius */
+    border-radius: clamp(12px, 2vw, 20px);
+    /* Fluid padding that adapts to screen size */
+    padding: clamp(16px, 4vw, 40px);
+    /* Responsive width */
+    width: min(100%, 650px);
+    max-width: 100%;
+    /* Dynamic height - adapts to content and viewport */
+    max-height: clamp(400px, 85vh, 90vh);
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    /* Prevent horizontal overflow */
+    position: relative;
+}
+
+.search-overlay.active .search-container {
+    transform: scale(1);
+}
+
+/* ===== SEARCH HEADER - FLEXIBLE ===== */
+.search-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(8px, 2vw, 16px);
+    margin-bottom: clamp(12px, 3vh, 24px);
+    flex-wrap: nowrap;
+}
+
+.search-header h2 {
+    color: var(--primary);
+    /* Fluid font size - auto-scales with viewport */
+    font-size: clamp(16px, 4vw, 24px);
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+/* ===== CLOSE BUTTON - ALWAYS TOUCHABLE ===== */
+.search-close {
+    background: var(--bg-light);
+    border: none;
+    /* Minimum 44x44 tap target, scales up on larger screens */
+    width: clamp(36px, 10vw, 44px);
+    height: clamp(36px, 10vw, 44px);
+    min-width: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+    font-size: clamp(18px, 5vw, 24px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.search-close:hover,
+.search-close:focus {
+    background: var(--danger);
+    color: white;
+    transform: rotate(90deg);
+    outline: none;
+}
+
+.search-close:active {
+    transform: rotate(90deg) scale(0.95);
+}
+
+/* ===== SEARCH INPUT - FLUID SIZING ===== */
+.search-overlay-input {
+    width: 100%;
+    /* Fluid padding */
+    padding: clamp(10px, 2.5vw, 16px) clamp(12px, 3vw, 20px);
+    /* Fluid font size */
+    font-size: clamp(15px, 4vw, 18px);
+    border: 2px solid var(--border);
+    border-radius: clamp(8px, 2vw, 12px);
+    margin-bottom: clamp(10px, 2.5vh, 16px);
+    transition: all 0.3s ease;
+    font-family: inherit;
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+.search-overlay-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+}
+
+/* ===== SEARCH RESULTS - FLUID SPACING ===== */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(6px, 1.5vw, 10px);
+    margin-bottom: clamp(10px, 2vh, 16px);
+    min-height: 50px;
+}
+
+/* ===== RESULT ITEM - FULLY RESPONSIVE ===== */
+.search-result-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(8px, 2vw, 14px);
+    padding: clamp(10px, 2.5vw, 16px) clamp(12px, 3vw, 18px);
+    background: var(--bg-light);
+    border-radius: clamp(8px, 2vw, 12px);
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    min-height: 44px; /* Minimum touch target */
+}
+
+.search-result-item:hover,
+.search-result-item:focus {
+    background: var(--accent);
+    color: white;
+    transform: translateX(clamp(2px, 1vw, 8px));
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+    outline: none;
+}
+
+.search-result-item:active {
+    transform: translateX(clamp(1px, 0.5vw, 4px)) scale(0.98);
+}
+
+/* Icon - Scales with viewport */
+.result-icon {
+    font-size: clamp(20px, 5vw, 32px);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    width: clamp(24px, 6vw, 36px);
+    text-align: center;
+}
+
+.search-result-item:hover .result-icon,
+.search-result-item:hover .result-arrow {
+    transform: scale(1.1);
+}
+
+/* Content - Flexible */
+.result-content {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.result-content h4 {
+    margin: 0 0 clamp(2px, 0.5vw, 4px) 0;
+    font-size: clamp(14px, 3.5vw, 18px);
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.3;
+}
+
+.result-keywords {
+    margin: 0;
+    font-size: clamp(11px, 2.8vw, 13px);
+    opacity: 0.7;
+    font-style: italic;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.search-result-item:hover .result-keywords {
+    opacity: 0.9;
+}
+
+/* Arrow - Scales with viewport */
+.result-arrow {
+    font-size: clamp(16px, 4vw, 24px);
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    opacity: 0.5;
+    width: clamp(20px, 5vw, 28px);
+    text-align: center;
+}
+
+.search-result-item:hover .result-arrow {
+    opacity: 1;
+}
+
+/* ===== NO RESULTS STATE ===== */
+.no-results {
+    text-align: center;
+    padding: clamp(20px, 5vh, 40px) clamp(12px, 3vw, 20px);
+    color: var(--text-light);
+}
+
+.no-results p {
+    margin: 0 0 clamp(6px, 1.5vh, 10px) 0;
+    font-size: clamp(13px, 3.5vw, 16px);
+    line-height: 1.5;
+}
+
+.no-results strong {
+    color: var(--text-dark);
+}
+
+.no-results .suggestion {
+    font-size: clamp(12px, 3vw, 14px);
+    color: var(--accent);
+    font-style: italic;
+}
+
+/* ===== SEARCH TIPS ===== */
+.search-tips {
+    background: linear-gradient(135deg, var(--bg-light) 0%, rgba(14, 165, 233, 0.1) 100%);
+    padding: clamp(8px, 2vw, 14px);
+    border-radius: clamp(6px, 1.5vw, 10px);
+    margin-top: clamp(10px, 2vh, 16px);
+    border-left: 3px solid var(--accent);
+}
+
+.search-tips p {
+    margin: 0;
+    font-size: clamp(11px, 2.8vw, 13px);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.search-tips strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* ===== LOADING STATE ===== */
+.search-results.loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* ===== SCROLLBAR - RESPONSIVE ===== */
+.search-container::-webkit-scrollbar {
+    width: clamp(6px, 1.5vw, 10px);
+}
+
+.search-container::-webkit-scrollbar-track {
+    background: var(--bg-light);
+    border-radius: 10px;
+}
+
+.search-container::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px;
+}
+
+.search-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Very Small Phones (iPhone SE 1st gen: 320px) */
+@media (max-width: 360px) {
+    .search-overlay {
+        padding: 6px 8px;
+        padding-top: max(env(safe-area-inset-top), 40px);
+    }
+    
+    .search-container {
+        padding: 14px;
+        max-height: calc(100vh - 50px);
+        border-radius: 10px;
+    }
+    
+    .search-header h2 {
+        font-size: 15px;
+    }
+    
+    .search-close {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        min-height: 32px;
+        font-size: 16px;
+    }
+    
+    .search-overlay-input {
+        font-size: 15px;
+        padding: 9px 11px;
+    }
+    
+    .result-content h4 {
+        font-size: 13px;
+    }
+    
+    .result-keywords {
+        font-size: 10px;
+    }
+}
+
+/* Small Phones (iPhone SE 2nd/3rd gen: 375px) */
+@media (min-width: 361px) and (max-width: 400px) {
+    .search-overlay {
+        padding-top: max(env(safe-area-inset-top), 50px);
+    }
+    
+    .search-container {
+        max-height: calc(100vh - 60px);
+    }
+}
+
+/* Standard Small Phones (401px - 430px) */
+@media (min-width: 401px) and (max-width: 430px) {
+    .search-overlay {
+        padding-top: max(env(safe-area-inset-top), 55px);
+    }
+    
+    .search-container {
+        max-height: calc(100vh - 70px);
+    }
+}
+
+/* Large Phones & Phablets (431px - 600px) */
+@media (min-width: 431px) and (max-width: 600px) {
+    .search-container {
+        padding: clamp(20px, 4vw, 28px);
+        max-height: calc(100vh - 80px);
+    }
+}
+
+/* Tablets Portrait (601px - 768px) */
+@media (min-width: 601px) and (max-width: 768px) {
+    .search-container {
+        padding: clamp(24px, 4vw, 32px);
+        max-height: 80vh;
+    }
+    
+    .search-header h2 {
+        font-size: clamp(20px, 3vw, 22px);
+    }
+}
+
+/* Tablets Landscape & Small Laptops (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .search-container {
+        padding: 32px;
+        max-height: 75vh;
+    }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1025px) {
+    .search-container {
+        padding: 40px;
+        max-height: 85vh;
+    }
+    
+    .search-header h2 {
+        font-size: 24px;
+    }
+}
+
+/* ===== LANDSCAPE ORIENTATION ===== */
+@media (max-height: 500px) and (orientation: landscape) {
+    .search-overlay {
+        padding: 4px 10px;
+        align-items: flex-start;
+    }
+    
+    .search-container {
+        max-height: 95vh;
+        padding: 12px 16px;
+        margin-top: 4px;
+    }
+    
+    .search-header {
+        margin-bottom: 8px;
+    }
+    
+    .search-header h2 {
+        font-size: 14px;
+    }
+    
+    .search-close {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
+    }
+    
+    .search-overlay-input {
+        padding: 6px 10px;
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .search-result-item {
+        padding: 6px 10px;
+        min-height: 38px;
+    }
+    
+    .result-content h4 {
+        font-size: 13px;
+    }
+    
+    .result-keywords {
+        font-size: 11px;
+    }
+    
+    .search-tips {
+        padding: 6px 8px;
+    }
+}
+
+/* ===== ULTRA WIDE LANDSCAPE (e.g., fold phones) ===== */
+@media (min-aspect-ratio: 2/1) {
+    .search-container {
+        max-width: 50vw;
+    }
+}
+
+/* ===== ACCESSIBILITY: HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+    .search-overlay {
+        background: rgba(0, 0, 0, 0.95);
+    }
+    
+    .search-overlay-input {
+        border-width: 3px;
+    }
+    
+    .search-result-item {
+        border-width: 2px;
+        border-color: var(--border);
+    }
+}
+
+/* ===== ACCESSIBILITY: REDUCED MOTION ===== */
+@media (prefers-reduced-motion: reduce) {
+    .search-overlay,
+    .search-container,
+    .search-result-item,
+    .search-close,
+    .result-icon,
+    .result-arrow {
+        transition: none;
+        animation: none;
+    }
+    
+    .search-overlay.active .search-container {
+        transform: scale(1);
+    }
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+    .search-overlay {
+        display: none !important;
+    }
+}
