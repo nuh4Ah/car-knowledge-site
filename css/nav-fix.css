@@ -96,22 +96,32 @@ nav.scrolled {
     border-color: var(--primary-light) !important;
 }
 
-/* ===== HERO SECTION - SOFT GRADIENT ===== */
+/* ===== HERO SECTION - SOFT GRADIENT WITH VISIBLE IMAGE ===== */
 .hero {
     background: linear-gradient(135deg, var(--hero-start) 0%, #F3F4F6 50%, var(--hero-end) 100%) !important;
 }
 
+/* Make hero overlay semi-transparent so image shows through */
 .hero::before {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(243, 244, 246, 0.2) 100%) !important;
+    background: linear-gradient(135deg, rgba(235, 244, 255, 0.75) 0%, rgba(243, 244, 246, 0.65) 50%, rgba(255, 247, 237, 0.75) 100%) !important;
+    opacity: 1 !important;
 }
 
+/* Increase hero image visibility */
+.hero-image {
+    opacity: 0.45 !important;
+    filter: brightness(1.1) contrast(1.05) !important;
+}
+
+/* Enhance text readability with stronger shadows */
 .hero h1 {
     color: #0f172a !important;
-    text-shadow: 0 2px 8px rgba(15, 23, 42, 0.1) !important;
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.9), 0 4px 16px rgba(15, 23, 42, 0.15) !important;
 }
 
 .hero-subtitle {
-    color: #64748b !important;
+    color: #475569 !important;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.8) !important;
 }
 
 /* ===== BODY BACKGROUND ===== */
