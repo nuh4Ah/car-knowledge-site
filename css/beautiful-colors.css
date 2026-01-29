@@ -1,0 +1,444 @@
+/* ===============================================
+   BEAUTIFUL COLOR REDESIGN v3.0
+   Modern Gradient Automotive Theme
+   🎨 All text GUARANTEED visible & readable!
+   =============================================== */
+
+/* ===== UPDATED COLOR VARIABLES ===== */
+:root {
+    /* PRIMARY COLORS - Premium Automotive Palette */
+    --color-royal-blue: #1E3A8A;        /* Deep Royal Blue */
+    --color-bright-blue: #3B82F6;       /* Brilliant Blue */
+    --color-vivid-orange: #F97316;      /* Vivid Orange */
+    --color-golden-amber: #FBBF24;      /* Golden Amber */
+    --color-pure-white: #FFFFFF;        /* Pure White */
+    --color-soft-gray: #F3F4F6;         /* Soft Gray Background */
+    --color-dark-slate: #1F2937;        /* Dark Slate */
+    --color-text-primary: #111827;      /* Almost Black for readability */
+    --color-text-secondary: #6B7280;    /* Medium Gray */
+    --color-success: #10B981;           /* Emerald Green */
+    --color-warning: #F59E0B;           /* Amber Warning */
+    --color-danger: #EF4444;            /* Red Alert */
+}
+
+/* ===== NAVIGATION - Deep Royal Blue Gradient ===== */
+nav {
+    background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%) !important;
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.3) !important;
+}
+
+nav.scrolled {
+    background: linear-gradient(135deg, #1E40AF 0%, #1E3A8A 100%) !important;
+    box-shadow: 0 6px 24px rgba(30, 58, 138, 0.4) !important;
+}
+
+/* Force nav brand to be PURE WHITE */
+.nav-brand a {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 8px rgba(251, 191, 36, 0.3) !important;
+}
+
+.nav-brand a:hover {
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.6) !important;
+}
+
+/* ===== DESKTOP NAV LINKS - PURE WHITE ===== */
+.desktop-nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.desktop-nav-link:hover,
+.desktop-nav-link:focus {
+    color: #FBBF24 !important;
+    background: rgba(251, 191, 36, 0.1) !important;
+}
+
+.desktop-nav-dropdown.active .desktop-nav-link {
+    color: #FBBF24 !important;
+}
+
+/* Old nav menu links */
+.nav-menu > li > a,
+.nav-menu > li > button {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.nav-menu > li > a:hover,
+.nav-menu > li > button:hover {
+    color: #FBBF24 !important;
+}
+
+/* Search input */
+.nav-search input {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    background: rgba(255, 255, 255, 0.15) !important;
+}
+
+.nav-search input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.nav-search input:focus {
+    border-color: #FBBF24 !important;
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2) !important;
+}
+
+/* ===== HERO SECTION - Royal Blue to Bright Blue Gradient ===== */
+.hero {
+    background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #60A5FA 100%) !important;
+}
+
+.hero::before {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.85) 0%, rgba(59, 130, 246, 0.7) 100%) !important;
+}
+
+.hero h1,
+.hero-subtitle,
+.hero p {
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ===== CTA BUTTONS - Vivid Orange Gradient ===== */
+.cta-button,
+.btn-primary {
+    background: linear-gradient(135deg, #F97316 0%, #EA580C 100%) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 10px 30px -5px rgba(249, 115, 22, 0.5) !important;
+    border: none !important;
+}
+
+.cta-button:hover,
+.cta-button:focus,
+.btn-primary:hover,
+.btn-primary:focus {
+    background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%) !important;
+    box-shadow: 0 15px 40px -5px rgba(249, 115, 22, 0.6), 0 0 20px rgba(249, 115, 22, 0.4) !important;
+    color: #FFFFFF !important;
+}
+
+.cta-button.secondary {
+    background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%) !important;
+    color: #1F2937 !important;
+    box-shadow: 0 10px 30px -5px rgba(251, 191, 36, 0.5) !important;
+}
+
+.cta-button.secondary:hover {
+    background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+    box-shadow: 0 15px 40px -5px rgba(251, 191, 36, 0.6), 0 0 20px rgba(251, 191, 36, 0.4) !important;
+}
+
+/* ===== SECTION BACKGROUNDS ===== */
+.content-section,
+.topics-section,
+.why-section {
+    background: #FFFFFF !important;
+}
+
+/* Alternating light gray background */
+.topics-section {
+    background: #F3F4F6 !important;
+}
+
+/* ===== SECTION HEADINGS - Deep Slate, ALWAYS VISIBLE ===== */
+.content-section h2,
+.topics-section h2,
+.why-section h2 {
+    color: #1F2937 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+}
+
+/* ===== SECTION INTRO TEXT - Medium Gray, ALWAYS VISIBLE ===== */
+.section-intro {
+    color: #6B7280 !important;
+    opacity: 1 !important;
+}
+
+/* ===== CARDS - Clean White with Proper Text Contrast ===== */
+.topic-card,
+.info-card,
+.system-card,
+.task-card,
+.warning-card,
+.part-card,
+.benefit,
+.mobile-category-card {
+    background: #FFFFFF !important;
+    border: 2px solid #E5E7EB !important;
+}
+
+.topic-card:hover,
+.info-card:hover,
+.system-card:hover,
+.task-card:hover,
+.warning-card:hover,
+.part-card:hover {
+    border-color: #3B82F6 !important;
+    box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.3) !important;
+}
+
+/* Card headings - Deep slate for readability */
+.card-content h3,
+.mobile-category-card h3 {
+    color: #1F2937 !important;
+}
+
+/* Card hover headings - Bright Blue */
+.topic-card:hover .card-content h3,
+.info-card:hover .card-content h3 {
+    color: #3B82F6 !important;
+}
+
+/* Card text - Medium gray */
+.card-content p,
+.mobile-category-card p {
+    color: #6B7280 !important;
+}
+
+/* Card arrows - Vivid Orange */
+.card-arrow,
+.mobile-category-card .card-arrow {
+    color: #F97316 !important;
+}
+
+/* ===== BENEFIT CARDS ===== */
+.benefit {
+    background: #F3F4F6 !important;
+    border: 2px solid #E5E7EB !important;
+}
+
+.benefit:hover {
+    background: #FFFFFF !important;
+    border-color: #FBBF24 !important;
+    box-shadow: 0 10px 30px -5px rgba(251, 191, 36, 0.3) !important;
+}
+
+.benefit h3 {
+    color: #1F2937 !important;
+}
+
+.benefit p {
+    color: #6B7280 !important;
+}
+
+/* ===== CAROUSEL BUTTONS - Vivid Orange ===== */
+.carousel-button {
+    background: linear-gradient(135deg, #F97316, #EA580C) !important;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4) !important;
+}
+
+.carousel-button:hover {
+    background: linear-gradient(135deg, #EA580C, #C2410C) !important;
+    box-shadow: 0 12px 32px rgba(249, 115, 22, 0.5), 0 0 20px rgba(249, 115, 22, 0.3) !important;
+}
+
+/* Carousel indicators */
+.carousel-indicator {
+    background: #D1D5DB !important;
+}
+
+.carousel-indicator.active {
+    background: #F97316 !important;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2) !important;
+}
+
+.carousel-indicator:hover {
+    background: #FBBF24 !important;
+}
+
+/* ===== BACK TO TOP BUTTON ===== */
+.back-to-top {
+    background: linear-gradient(135deg, #F97316, #EA580C) !important;
+    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4) !important;
+}
+
+.back-to-top:hover {
+    background: linear-gradient(135deg, #EA580C, #C2410C) !important;
+    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.5), 0 0 20px rgba(249, 115, 22, 0.3) !important;
+}
+
+/* ===== FOOTER - Deep Royal Blue Gradient ===== */
+footer {
+    background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%) !important;
+}
+
+.footer-about h3 {
+    color: #FBBF24 !important;
+}
+
+.footer-about p,
+.footer-copyright p,
+.educational-note {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.footer-about strong {
+    color: #FFFFFF !important;
+}
+
+/* ===== MOBILE MENU ===== */
+@media (max-width: 768px) {
+    .nav-menu {
+        background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%) !important;
+    }
+    
+    .nav-menu > li > a,
+    .nav-menu > li > button {
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    .nav-menu > li > a:hover,
+    .nav-menu > li > button:hover {
+        background: rgba(251, 191, 36, 0.15) !important;
+        color: #FBBF24 !important;
+    }
+    
+    .dropdown-menu a {
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    .dropdown-menu a:hover,
+    .dropdown-menu a.active {
+        background: rgba(251, 191, 36, 0.15) !important;
+        color: #FBBF24 !important;
+    }
+}
+
+/* ===== MOBILE MENU TOGGLE ===== */
+.menu-toggle,
+.modern-menu-toggle {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus,
+.modern-menu-toggle:hover,
+.modern-menu-toggle:focus {
+    background: rgba(251, 191, 36, 0.15) !important;
+    border-color: #FBBF24 !important;
+}
+
+.menu-toggle span,
+.modern-menu-toggle .menu-bar {
+    background: #FFFFFF !important;
+}
+
+.menu-toggle.active,
+.modern-menu-toggle.active {
+    background: rgba(249, 115, 22, 0.2) !important;
+    border-color: #F97316 !important;
+}
+
+.menu-toggle.active span,
+.modern-menu-toggle.active .menu-bar {
+    background: #F97316 !important;
+}
+
+/* ===== MODERN MOBILE MENU ===== */
+.modern-mobile-menu {
+    background: linear-gradient(135deg, #1E3A8A 0%, #2563EB 100%) !important;
+}
+
+.menu-header h3 {
+    color: #FFFFFF !important;
+}
+
+.menu-close {
+    color: #FFFFFF !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.menu-close:hover {
+    background: #EF4444 !important;
+    border-color: #EF4444 !important;
+}
+
+.menu-item,
+.menu-subitem {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.menu-item:hover,
+.menu-item:focus,
+.menu-subitem:hover,
+.menu-subitem:focus {
+    background: rgba(251, 191, 36, 0.15) !important;
+    color: #FBBF24 !important;
+}
+
+/* ===== SEARCH OVERLAY ===== */
+.search-overlay {
+    background: rgba(30, 58, 138, 0.9) !important;
+}
+
+.search-header h2 {
+    color: #1F2937 !important;
+}
+
+.search-overlay-input {
+    border-color: #D1D5DB !important;
+    color: #1F2937 !important;
+}
+
+.search-overlay-input:focus {
+    border-color: #3B82F6 !important;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1) !important;
+}
+
+.suggestion-item:hover {
+    background: #1E3A8A !important;
+    border-color: #FBBF24 !important;
+    box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3) !important;
+}
+
+/* ===== MOBILE SEARCH BUTTON ===== */
+.mobile-search-btn {
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    color: #FFFFFF !important;
+}
+
+.mobile-search-btn:hover,
+.mobile-search-btn:focus {
+    background: rgba(251, 191, 36, 0.15) !important;
+    border-color: #FBBF24 !important;
+}
+
+/* ===== ACCESSIBILITY - High Contrast Focus States ===== */
+:focus-visible {
+    outline: 3px solid #FBBF24 !important;
+    outline-offset: 2px !important;
+}
+
+/* ===== ENSURE ALL BODY TEXT IS READABLE ===== */
+body {
+    color: #1F2937 !important;
+}
+
+/* ===== DROPDOWN MENUS - White background with dark text ===== */
+.desktop-dropdown-menu {
+    background: #FFFFFF !important;
+}
+
+.desktop-dropdown-item {
+    color: #1F2937 !important;
+}
+
+.desktop-dropdown-item:hover,
+.desktop-dropdown-item:focus {
+    background: rgba(59, 130, 246, 0.1) !important;
+    color: #1E3A8A !important;
+}
+
+.dropdown-content strong {
+    color: #1F2937 !important;
+}
+
+.dropdown-content small {
+    color: #6B7280 !important;
+}
+
+.desktop-dropdown-item:hover .dropdown-content strong {
+    color: #3B82F6 !important;
+}
