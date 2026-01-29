@@ -1,0 +1,33 @@
+{
+  "name": "car-knowledge-site",
+  "version": "2.0.0",
+  "description": "Educational website teaching car basics - anatomy, systems, maintenance, and troubleshooting for complete beginners",
+  "type": "module",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "preview": "python3 -m http.server 8000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuh4Ah/car-knowledge-site.git"
+  },
+  "keywords": [
+    "car",
+    "automobile",
+    "education",
+    "maintenance",
+    "beginner",
+    "learning",
+    "automotive",
+    "tutorial"
+  ],
+  "author": "Will Andrie Ilagan",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/nuh4Ah/car-knowledge-site/issues"
+  },
+  "homepage": "https://github.com/nuh4Ah/car-knowledge-site#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
