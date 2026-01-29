@@ -1,25 +1,25 @@
 /* ========================================
    CAR KNOWLEDGE SITE - SHARED STYLES  
-   🎨 Updated with CarKnow Design System v1.0
+   💎 Updated with Midnight Luxe Design System v2.0
    ======================================== */
 
-/* ===== CSS VARIABLES (Legacy compatibility - use design-system.css vars when possible) ===== */
+/* ===== CSS VARIABLES (Updated with Midnight Luxe palette) ===== */
 :root {
-    /* Updated to match Design System */
-    --primary: #2563EB;      /* Deep Blue */
-    --secondary: #F97316;    /* Safety Orange */
-    --accent: #06B6D4;       /* Cyan accent */
-    --success: #10B981;      /* Emerald Green */
-    --warning: #FBBF24;      /* Amber Yellow */
-    --danger: #EF4444;       /* Bright Red */
-    --bg-light: #F9FAFB;     /* Gray 50 */
+    /* Brand Colors - Midnight Luxe */
+    --primary: #0F1419;      /* Midnight Navy */
+    --secondary: #FF4D6D;    /* Vibrant Coral Red */
+    --accent: #00D9FF;       /* Electric Cyan */
+    --success: #06D6A0;      /* Fresh Mint */
+    --warning: #FFB020;      /* Sunset Gold */
+    --danger: #FF5252;       /* Crimson Alert */
+    --bg-light: #F8F9FA;     /* Soft Cloud */
     --bg-white: #FFFFFF;
-    --text-dark: #111827;    /* Gray 900 */
-    --text-light: #6B7280;   /* Gray 500 */
-    --border: #E5E7EB;       /* Gray 200 */
-    --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --text-dark: #0F1419;    /* Midnight Navy */
+    --text-light: #4A5568;   /* Steel Gray */
+    --border: #CBD5E0;       /* Silver Mist */
+    --shadow-sm: 0 1px 2px 0 rgba(15,20,25,0.05);
+    --shadow-md: 0 4px 6px -1px rgba(15,20,25,0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(15,20,25,0.1);
     --spacing-xs: 4px;
     --spacing-sm: 8px;
     --spacing-md: 16px;
@@ -43,11 +43,11 @@ html {
 }
 
 body {
-    font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
     font-size: 16px;
     line-height: 1.6;
-    color: var(--color-text-primary, var(--text-dark));
-    background-color: var(--color-bg-secondary, var(--bg-light));
+    color: var(--text-dark);
+    background-color: var(--bg-light);
     opacity: 0;
     animation: pageLoad 0.6s ease-out 0.1s forwards;
     -webkit-tap-highlight-color: transparent;
@@ -60,10 +60,10 @@ body {
     to { opacity: 1; }
 }
 
-/* ===== NAVIGATION - Deep Blue Gradient ===== */
+/* ===== NAVIGATION - 💎 Midnight Navy with Subtle Gradient ===== */
 nav {
-    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
-    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
+    background: linear-gradient(135deg, #0F1419 0%, #1A2028 100%);
+    box-shadow: 0 4px 20px rgba(15, 20, 25, 0.2);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -75,8 +75,8 @@ nav {
 }
 
 nav.scrolled {
-    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.25);
-    background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 100%);
+    box-shadow: 0 6px 24px rgba(15, 20, 25, 0.3);
+    background: linear-gradient(135deg, #0A0D11 0%, #0F1419 100%);
 }
 
 .nav-container {
@@ -98,7 +98,7 @@ nav.scrolled {
     align-items: center;
     gap: 10px;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 2px 8px rgba(0, 217, 255, 0.3);
     letter-spacing: -0.5px;
     white-space: nowrap;
     -webkit-tap-highlight-color: transparent;
@@ -106,7 +106,8 @@ nav.scrolled {
 
 .nav-brand a:hover {
     transform: scale(1.05);
-    filter: brightness(1.1);
+    filter: brightness(1.2);
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
 }
 
 .nav-menu {
@@ -150,7 +151,7 @@ nav.scrolled {
     position: absolute;
     inset: 0;
     border-radius: 8px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.15), rgba(0, 217, 255, 0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -164,15 +165,16 @@ nav.scrolled {
 .nav-menu > li > a:hover,
 .nav-menu > li > button:hover,
 .nav-menu > li > a.active {
-    color: white;
+    color: var(--accent);
     transform: translateY(-2px);
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.3);
     outline: none;
 }
 
 .nav-menu > li > a.active {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(0, 217, 255, 0.1);
     border-bottom: 2px solid var(--secondary);
+    color: white;
 }
 
 .dropdown-toggle::after {
@@ -191,7 +193,7 @@ nav.scrolled {
     left: 0;
     background: white;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 40px rgba(15, 20, 25, 0.25);
     min-width: 220px;
     padding: 8px;
     margin-top: 8px;
@@ -232,13 +234,13 @@ nav.scrolled {
 
 .dropdown-menu a:hover,
 .dropdown-menu a.active {
-    background: var(--bg-light);
+    background: rgba(0, 217, 255, 0.08);
     color: var(--primary);
     transform: translateX(4px);
 }
 
 .dropdown-menu a.active {
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(0, 217, 255, 0.12);
     font-weight: 600;
 }
 
@@ -261,9 +263,9 @@ nav.scrolled {
 
 .nav-search input {
     padding: 8px 16px 8px 40px;
-    border: 2px solid rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     font-size: 16px;
     width: 200px;
@@ -273,13 +275,14 @@ nav.scrolled {
 }
 
 .nav-search input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .nav-search input:focus {
     outline: none;
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.1);
 }
 
 .nav-search::before {
@@ -315,8 +318,8 @@ nav.scrolled {
 
 .mobile-search-btn:hover,
 .mobile-search-btn:focus {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(0, 217, 255, 0.15);
+    border-color: var(--accent);
     transform: scale(1.05);
     outline: none;
 }
@@ -329,7 +332,7 @@ nav.scrolled {
 .search-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(15, 20, 25, 0.85);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 9999;
@@ -351,7 +354,7 @@ nav.scrolled {
     padding: 40px;
     max-width: 600px;
     width: 100%;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(15, 20, 25, 0.4);
     transform: translateY(30px) scale(0.9);
     transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -407,8 +410,8 @@ nav.scrolled {
 
 .search-overlay-input:focus {
     outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(0, 217, 255, 0.1);
 }
 
 .search-suggestions {
@@ -444,9 +447,9 @@ nav.scrolled {
 
 .suggestion-item:hover {
     background: var(--primary);
-    border-color: var(--primary);
+    border-color: var(--accent);
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 217, 255, 0.3);
 }
 
 .suggestion-icon {
@@ -487,8 +490,8 @@ nav.scrolled {
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(0, 217, 255, 0.1);
+    border-color: var(--accent);
     transform: scale(1.05);
     outline: none;
 }
@@ -504,7 +507,7 @@ nav.scrolled {
 }
 
 .menu-toggle.active {
-    background: rgba(249, 115, 22, 0.2);
+    background: rgba(255, 77, 109, 0.2);
     border-color: var(--secondary);
 }
 
@@ -523,12 +526,11 @@ nav.scrolled {
     background: var(--secondary);
 }
 
-/* Use design system skip-to-content if available */
 .skip-link {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--primary);
+    background: var(--secondary);
     color: white;
     padding: 8px;
     text-decoration: none;
@@ -540,7 +542,7 @@ nav.scrolled {
     top: 0;
 }
 
-/* ===== HERO SECTION - Deep Blue Gradient ===== */
+/* ===== HERO SECTION - 🌃 Midnight Gradient ===== */
 .hero {
     position: relative;
     height: 60vh;
@@ -549,7 +551,7 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+    background: linear-gradient(135deg, #0F1419 0%, #1A2028 50%, #2D3748 100%);
     color: white;
 }
 
@@ -560,7 +562,7 @@ nav.scrolled {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(30, 64, 175, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(15, 20, 25, 0.8) 0%, rgba(26, 32, 40, 0.6) 100%);
     z-index: 1;
     animation: gradientShift 15s ease-in-out infinite;
 }
@@ -577,7 +579,7 @@ nav.scrolled {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.3;
+    opacity: 0.25;
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
     will-change: transform;
@@ -622,7 +624,7 @@ nav.scrolled {
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
-    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3), 0 0 30px rgba(0, 217, 255, 0.2);
     animation: fadeInUp 1s ease-out 0.2s both;
 }
 
@@ -634,19 +636,20 @@ nav.scrolled {
     animation: fadeInUp 1s ease-out 0.4s both;
 }
 
+/* 💎 CTA BUTTON - Vibrant Coral Red */
 .cta-button {
     display: inline-block;
     padding: 14px 32px;
-    background: var(--secondary);
+    background: linear-gradient(135deg, #FF4D6D 0%, #F03E58 100%);
     color: white;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
     font-size: 16px;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    border: 2px solid var(--secondary);
+    border: 2px solid transparent;
     cursor: pointer;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 10px 30px -5px rgba(255, 77, 109, 0.4);
     animation: fadeInUp 1s ease-out 0.6s both, buttonPulse 2s ease-in-out 2s infinite;
     position: relative;
     overflow: hidden;
@@ -681,9 +684,8 @@ nav.scrolled {
 .cta-button:hover,
 .cta-button:focus {
     transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 24px rgba(249, 115, 22, 0.4);
-    background: #EA580C;
-    border-color: #EA580C;
+    box-shadow: 0 15px 40px -5px rgba(255, 77, 109, 0.5), 0 0 20px rgba(255, 77, 109, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
     outline: none;
 }
 
@@ -692,14 +694,13 @@ nav.scrolled {
 }
 
 .cta-button.secondary {
-    background: white;
+    background: linear-gradient(135deg, #00D9FF 0%, #00C4E6 100%);
     color: var(--primary);
-    border-color: white;
+    box-shadow: 0 10px 30px -5px rgba(0, 217, 255, 0.4);
 }
 
 .cta-button.secondary:hover {
-    background: var(--bg-light);
-    border-color: var(--bg-light);
+    box-shadow: 0 15px 40px -5px rgba(0, 217, 255, 0.5), 0 0 20px rgba(0, 217, 255, 0.3);
 }
 
 .container {
@@ -789,7 +790,7 @@ nav.scrolled {
     width: 100%;
     height: 100%;
     margin: 0;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(15, 20, 25, 0.3);
     opacity: 1;
     transform: none;
 }
@@ -808,7 +809,7 @@ nav.scrolled {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(135deg, var(--secondary), #EA580C);
+    background: linear-gradient(135deg, #FF4D6D, #F03E58);
     color: white;
     border: none;
     width: 60px;
@@ -820,7 +821,7 @@ nav.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 24px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 8px 24px rgba(255, 77, 109, 0.4);
     z-index: 200;
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -webkit-tap-highlight-color: transparent;
@@ -828,9 +829,9 @@ nav.scrolled {
 }
 
 .carousel-button:hover {
-    background: linear-gradient(135deg, #EA580C, #C2410C);
+    background: linear-gradient(135deg, #F03E58, #D6294A);
     transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 12px 32px rgba(249, 115, 22, 0.5);
+    box-shadow: 0 12px 32px rgba(255, 77, 109, 0.5), 0 0 20px rgba(255, 77, 109, 0.3);
 }
 
 .carousel-button:active {
@@ -870,7 +871,7 @@ nav.scrolled {
 .carousel-indicator.active {
     background: var(--secondary);
     transform: scale(1.4);
-    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+    box-shadow: 0 0 0 3px rgba(255, 77, 109, 0.2);
 }
 
 .carousel-indicator:hover {
@@ -965,7 +966,7 @@ nav.scrolled {
 .scroll-indicator::before {
     content: '← Swipe →';
     padding: 8px 16px;
-    background: rgba(37, 99, 235, 0.1);
+    background: rgba(0, 217, 255, 0.1);
     border-radius: 20px;
     display: inline-block;
 }
@@ -1025,8 +1026,8 @@ nav.scrolled {
 .warning-card:hover,
 .part-card:hover {
     transform: translateY(-12px) scale(1.03);
-    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
-    border-color: var(--primary);
+    box-shadow: 0 20px 40px -10px rgba(15,20,25,0.2);
+    border-color: var(--accent);
 }
 
 .card-link {
@@ -1045,7 +1046,7 @@ nav.scrolled {
 
 .card-image {
     aspect-ratio: 1 / 1;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
+    background: linear-gradient(135deg, #0F1419, #2D3748);
 }
 
 .card-image img {
@@ -1112,7 +1113,7 @@ nav.scrolled {
 .benefit:hover {
     background: var(--bg-white);
     box-shadow: var(--shadow-md);
-    border-color: var(--primary);
+    border-color: var(--accent);
     transform: translateY(-8px) scale(1.02);
 }
 
@@ -1151,7 +1152,7 @@ nav.scrolled {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: var(--secondary);
+    background: linear-gradient(135deg, #FF4D6D, #F03E58);
     color: white;
     border: none;
     border-radius: 50%;
@@ -1160,7 +1161,7 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     font-size: 24px;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 24px rgba(255, 77, 109, 0.4);
     opacity: 0;
     visibility: hidden;
     transform: translateY(100px);
@@ -1179,9 +1180,9 @@ nav.scrolled {
 }
 
 .back-to-top:hover {
-    background: #EA580C;
+    background: linear-gradient(135deg, #F03E58, #D6294A);
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
+    box-shadow: 0 15px 30px rgba(255, 77, 109, 0.5), 0 0 20px rgba(255, 77, 109, 0.3);
 }
 
 .back-to-top:active {
@@ -1189,7 +1190,7 @@ nav.scrolled {
 }
 
 footer {
-    background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+    background: linear-gradient(135deg, #0F1419 0%, #1A2028 100%);
     color: white;
     margin-top: var(--spacing-2xl);
     padding: var(--spacing-lg) 0;
@@ -1212,7 +1213,7 @@ footer {
 .footer-about h3 {
     font-size: 16px;
     font-weight: 600;
-    color: var(--secondary);
+    color: var(--accent);
     margin-bottom: var(--spacing-sm);
 }
 
@@ -1313,7 +1314,7 @@ footer {
         width: 85%;
         max-width: 320px;
         height: 100vh;
-        background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
+        background: linear-gradient(135deg, #0F1419 0%, #1A2028 100%);
         flex-direction: column;
         gap: 0;
         padding: 80px 20px 20px;
@@ -1363,7 +1364,7 @@ footer {
     
     .dropdown-menu {
         position: static;
-        background: rgba(255, 255, 255, 0.1);
+        background: rgba(0, 217, 255, 0.1);
         margin: 4px 0 8px 0;
         max-height: 0;
         overflow: hidden;
@@ -1385,7 +1386,7 @@ footer {
     
     .dropdown-menu a:hover,
     .dropdown-menu a.active {
-        background: rgba(255, 255, 255, 0.15);
+        background: rgba(0, 217, 255, 0.15);
         color: white;
     }
     
