@@ -3,6 +3,46 @@
   "name": "car-knowledge-site",
   "cleanUrls": true,
   "trailingSlash": false,
+  "builds": [
+    {
+      "src": "**/*.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "css/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "js/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "assets/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "favicon.svg",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*).html",
+      "dest": "/$1.html"
+    },
+    {
+      "src": "/",
+      "dest": "/index.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
+    }
+  ],
   "redirects": [
     {
       "source": "/home",
@@ -11,11 +51,6 @@
     },
     {
       "source": "/index",
-      "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/index.html",
       "destination": "/",
       "permanent": true
     }
