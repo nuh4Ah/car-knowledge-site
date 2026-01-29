@@ -23,6 +23,8 @@ nav {
     background: var(--bg-primary-light) !important;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
     border-bottom: 1px solid #E5E7EB !important;
+    position: relative !important;
+    z-index: 1000 !important;
 }
 
 nav.scrolled {
@@ -100,18 +102,27 @@ nav.scrolled {
 .hero {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
     position: relative !important;
+    z-index: 1 !important;
 }
 
 /* Make hero overlay semi-transparent so image shows through */
 .hero::before {
     background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.6) 50%, rgba(240, 147, 251, 0.7) 100%) !important;
     opacity: 1 !important;
+    z-index: 1 !important;
 }
 
 /* Increase hero image visibility */
 .hero-image {
     opacity: 0.45 !important;
     filter: brightness(1.1) contrast(1.05) !important;
+    z-index: 0 !important;
+}
+
+/* Hero content stays above overlay */
+.hero-content {
+    position: relative !important;
+    z-index: 2 !important;
 }
 
 /* Enhance text readability with stronger shadows */
@@ -295,6 +306,7 @@ footer {
     .nav-menu {
         background: var(--bg-primary-light) !important;
         border-left: 1px solid #E5E7EB !important;
+        z-index: 1001 !important;
     }
     
     .nav-menu > li > a,
@@ -326,6 +338,7 @@ footer {
     
     .menu-toggle {
         border-color: #E0E7FF !important;
+        z-index: 1002 !important;
     }
     
     .menu-toggle span {
@@ -363,6 +376,7 @@ footer {
     background: linear-gradient(135deg, var(--accent-orange) 0%, #FF4D6D 100%) !important;
     box-shadow: 0 8px 24px rgba(249, 115, 22, 0.3) !important;
     color: #ffffff !important;
+    z-index: 999 !important;
 }
 
 .back-to-top:hover {
@@ -373,10 +387,12 @@ footer {
 /* ===== SEARCH OVERLAY ===== */
 .search-overlay {
     background: rgba(15, 23, 42, 0.75) !important;
+    z-index: 2000 !important;
 }
 
 .search-container {
     background: var(--bg-primary-light) !important;
+    z-index: 2001 !important;
 }
 
 .search-header h2 {
