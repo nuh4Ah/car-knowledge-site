@@ -1,20 +1,22 @@
 /* ========================================
    CAR KNOWLEDGE SITE - SHARED STYLES  
+   🎨 Updated with CarKnow Design System v1.0
    ======================================== */
 
-/* ===== CSS VARIABLES ===== */
+/* ===== CSS VARIABLES (Legacy compatibility - use design-system.css vars when possible) ===== */
 :root {
-    --primary: #1e3a8a;
-    --secondary: #f97316;
-    --accent: #0ea5e9;
-    --success: #10b981;
-    --warning: #f59e0b;
-    --danger: #ef4444;
-    --bg-light: #f8fafc;
-    --bg-white: #ffffff;
-    --text-dark: #1f2937;
-    --text-light: #6b7280;
-    --border: #e5e7eb;
+    /* Updated to match Design System */
+    --primary: #2563EB;      /* Deep Blue */
+    --secondary: #F97316;    /* Safety Orange */
+    --accent: #06B6D4;       /* Cyan accent */
+    --success: #10B981;      /* Emerald Green */
+    --warning: #FBBF24;      /* Amber Yellow */
+    --danger: #EF4444;       /* Bright Red */
+    --bg-light: #F9FAFB;     /* Gray 50 */
+    --bg-white: #FFFFFF;
+    --text-dark: #111827;    /* Gray 900 */
+    --text-light: #6B7280;   /* Gray 500 */
+    --border: #E5E7EB;       /* Gray 200 */
     --shadow-sm: 0 1px 2px 0 rgba(0,0,0,0.05);
     --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
     --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1);
@@ -41,11 +43,11 @@ html {
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-family: var(--font-sans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif);
     font-size: 16px;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--bg-light);
+    color: var(--color-text-primary, var(--text-dark));
+    background-color: var(--color-bg-secondary, var(--bg-light));
     opacity: 0;
     animation: pageLoad 0.6s ease-out 0.1s forwards;
     -webkit-tap-highlight-color: transparent;
@@ -58,10 +60,10 @@ body {
     to { opacity: 1; }
 }
 
-/* ===== NAVIGATION ===== */
+/* ===== NAVIGATION - Deep Blue Gradient ===== */
 nav {
-    background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -73,8 +75,8 @@ nav {
 }
 
 nav.scrolled {
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    box-shadow: 0 6px 24px rgba(37, 99, 235, 0.25);
+    background: linear-gradient(135deg, #1E40AF 0%, #1D4ED8 100%);
 }
 
 .nav-container {
@@ -236,7 +238,7 @@ nav.scrolled {
 }
 
 .dropdown-menu a.active {
-    background: rgba(30, 58, 138, 0.1);
+    background: rgba(37, 99, 235, 0.1);
     font-weight: 600;
 }
 
@@ -406,7 +408,7 @@ nav.scrolled {
 .search-overlay-input:focus {
     outline: none;
     border-color: var(--primary);
-    box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
 .search-suggestions {
@@ -444,7 +446,7 @@ nav.scrolled {
     background: var(--primary);
     border-color: var(--primary);
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(30, 58, 138, 0.3);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
 }
 
 .suggestion-icon {
@@ -521,6 +523,7 @@ nav.scrolled {
     background: var(--secondary);
 }
 
+/* Use design system skip-to-content if available */
 .skip-link {
     position: absolute;
     top: -40px;
@@ -537,7 +540,7 @@ nav.scrolled {
     top: 0;
 }
 
-/* ===== HERO SECTION ===== */
+/* ===== HERO SECTION - Deep Blue Gradient ===== */
 .hero {
     position: relative;
     height: 60vh;
@@ -546,7 +549,7 @@ nav.scrolled {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
     color: white;
 }
 
@@ -557,7 +560,7 @@ nav.scrolled {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(30, 64, 175, 0.6) 100%);
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.8) 0%, rgba(30, 64, 175, 0.6) 100%);
     z-index: 1;
     animation: gradientShift 15s ease-in-out infinite;
 }
@@ -679,8 +682,8 @@ nav.scrolled {
 .cta-button:focus {
     transform: translateY(-3px) scale(1.05);
     box-shadow: 0 12px 24px rgba(249, 115, 22, 0.4);
-    background: #ea580c;
-    border-color: #ea580c;
+    background: #EA580C;
+    border-color: #EA580C;
     outline: none;
 }
 
@@ -805,7 +808,7 @@ nav.scrolled {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: linear-gradient(135deg, var(--secondary), #ea580c);
+    background: linear-gradient(135deg, var(--secondary), #EA580C);
     color: white;
     border: none;
     width: 60px;
@@ -825,7 +828,7 @@ nav.scrolled {
 }
 
 .carousel-button:hover {
-    background: linear-gradient(135deg, #ea580c, #c2410c);
+    background: linear-gradient(135deg, #EA580C, #C2410C);
     transform: translateY(-50%) scale(1.1);
     box-shadow: 0 12px 32px rgba(249, 115, 22, 0.5);
 }
@@ -962,7 +965,7 @@ nav.scrolled {
 .scroll-indicator::before {
     content: '← Swipe →';
     padding: 8px 16px;
-    background: rgba(30, 58, 138, 0.1);
+    background: rgba(37, 99, 235, 0.1);
     border-radius: 20px;
     display: inline-block;
 }
@@ -1023,7 +1026,7 @@ nav.scrolled {
 .part-card:hover {
     transform: translateY(-12px) scale(1.03);
     box-shadow: 0 20px 40px -10px rgba(0,0,0,0.2);
-    border-color: var(--accent);
+    border-color: var(--primary);
 }
 
 .card-link {
@@ -1109,7 +1112,7 @@ nav.scrolled {
 .benefit:hover {
     background: var(--bg-white);
     box-shadow: var(--shadow-md);
-    border-color: var(--accent);
+    border-color: var(--primary);
     transform: translateY(-8px) scale(1.02);
 }
 
@@ -1176,7 +1179,7 @@ nav.scrolled {
 }
 
 .back-to-top:hover {
-    background: #ea580c;
+    background: #EA580C;
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(249, 115, 22, 0.4);
 }
@@ -1186,7 +1189,7 @@ nav.scrolled {
 }
 
 footer {
-    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
     color: white;
     margin-top: var(--spacing-2xl);
     padding: var(--spacing-lg) 0;
@@ -1310,7 +1313,7 @@ footer {
         width: 85%;
         max-width: 320px;
         height: 100vh;
-        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        background: linear-gradient(135deg, #2563EB 0%, #1E40AF 100%);
         flex-direction: column;
         gap: 0;
         padding: 80px 20px 20px;
