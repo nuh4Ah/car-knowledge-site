@@ -1,0 +1,46 @@
+/* ===============================================
+   NAVIGATION TEXT VISIBILITY FIX
+   Force white text on dark navigation
+   =============================================== */
+
+/* Force nav brand to be white */
+.nav-brand a {
+    color: #FFFFFF !important;
+}
+
+/* Force all nav menu links to be white */
+.nav-menu > li > a,
+.nav-menu > li > button {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Active and hover states */
+.nav-menu > li > a:hover,
+.nav-menu > li > button:hover {
+    color: #00D9FF !important;
+}
+
+.nav-menu > li > a.active {
+    color: #FFFFFF !important;
+}
+
+/* Force search input text to be white */
+.nav-search input {
+    color: #FFFFFF !important;
+}
+
+.nav-search input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Mobile menu text */
+@media (max-width: 768px) {
+    .nav-menu > li > a,
+    .nav-menu > li > button {
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+    
+    .dropdown-menu a {
+        color: rgba(255, 255, 255, 0.95) !important;
+    }
+}
