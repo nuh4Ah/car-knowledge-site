@@ -1,0 +1,4 @@
+# Deployment trigger - DO NOT DELETE
+# This file forces Vercel to redeploy when modified
+# Last updated: 2026-01-30 04:25 AM PST
+# Reason: Force redeploy after vercel.json fix
