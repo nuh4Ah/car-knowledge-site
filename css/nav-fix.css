@@ -49,6 +49,21 @@
     color: rgba(255, 255, 255, 0.7) !important;
 }
 
+/* ===== SECTION HEADINGS & TEXT VISIBILITY ===== */
+/* Fix section headings - ensure they're visible and dark */
+.content-section h2,
+.topics-section h2,
+.why-section h2 {
+    color: #0F1419 !important;
+    opacity: 1 !important;
+}
+
+/* Fix section intro text - ensure it's visible */
+.section-intro {
+    color: #4A5568 !important;
+    opacity: 1 !important;
+}
+
 /* Mobile menu text */
 @media (max-width: 768px) {
     .nav-menu > li > a,
