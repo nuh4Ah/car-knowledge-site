@@ -8,13 +8,29 @@
     color: #FFFFFF !important;
 }
 
-/* Force all nav menu links to be white */
+/* ===== DESKTOP NAVIGATION LINKS - WHITE BY DEFAULT ===== */
+.desktop-nav-link {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Desktop nav links turn cyan on hover */
+.desktop-nav-link:hover,
+.desktop-nav-link:focus {
+    color: #00D9FF !important;
+}
+
+/* Active dropdown toggle stays white */
+.desktop-nav-dropdown.active .desktop-nav-link {
+    color: #FFFFFF !important;
+}
+
+/* Force all old nav menu links to be white (if any exist) */
 .nav-menu > li > a,
 .nav-menu > li > button {
     color: rgba(255, 255, 255, 0.95) !important;
 }
 
-/* Active and hover states */
+/* Active and hover states for old nav */
 .nav-menu > li > a:hover,
 .nav-menu > li > button:hover {
     color: #00D9FF !important;
