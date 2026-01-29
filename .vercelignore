@@ -1,0 +1,22 @@
+# Development files
+node_modules/
+.git/
+.gitignore
+.DS_Store
+Thumbs.db
+
+# Documentation (keep README for Vercel dashboard)
+CONTRIBUTING.md
+MOBILE-OPTIMIZATION.md
+
+# Local development
+.vscode/
+.idea/
+*.log
+.env.local
+.env*.local
+
+# Backup files
+*.bak
+*.tmp
+*~
