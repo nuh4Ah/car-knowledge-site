@@ -9,11 +9,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Car Knowledge">
-    <meta name="theme-color" content="#1e3a8a">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#2563EB">
+    <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
     
     <title>Car Knowledge | Learn How Your Car Works</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <!-- ✨ Design System & Core Styles -->
+    <link rel="stylesheet" href="css/design-system.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/search-overlay.css">
     <link rel="stylesheet" href="css/mobile-enhancements.css">
@@ -21,7 +24,7 @@
     <link rel="stylesheet" href="css/desktop-nav-menu.css">
 </head>
 <body>
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
 
 <nav role="navigation" aria-label="Main navigation">
     <div class="nav-container">
@@ -189,7 +192,7 @@
     <div class="hero-content">
         <h1>Learn How Your Car Works</h1>
         <p class="hero-subtitle">Simple, visual guides to car anatomy, systems, and maintenance. No confusing jargon — just practical knowledge for beginners.</p>
-        <a href="#topics" class="cta-button">Start Learning →</a>
+        <a href="#topics" class="cta-button btn-primary">Start Learning →</a>
     </div>
 </header>
 
@@ -201,32 +204,32 @@
                 Understanding your car saves money, reduces stress, and makes you a safer, more confident driver.
             </p>
             <div class="benefits-grid">
-                <div class="benefit">
+                <div class="benefit card">
                     <span class="benefit-icon">💰</span>
                     <h3>Save Money</h3>
                     <p>Know when a mechanic is being honest. Avoid unnecessary repairs and overcharges.</p>
                 </div>
-                <div class="benefit">
+                <div class="benefit card">
                     <span class="benefit-icon">🛡️</span>
                     <h3>Stay Safe</h3>
                     <p>Recognize warning signs before they become dangerous. Know what to do in an emergency.</p>
                 </div>
-                <div class="benefit">
+                <div class="benefit card">
                     <span class="benefit-icon">🔧</span>
                     <h3>Do It Yourself</h3>
                     <p>Perform basic maintenance yourself. Change oil, check fluids, and replace wiper blades.</p>
                 </div>
-                <div class="benefit">
+                <div class="benefit card">
                     <span class="benefit-icon">📚</span>
                     <h3>Gain Confidence</h3>
                     <p>No more anxiety when a dashboard light appears. Understand what's happening under the hood.</p>
                 </div>
-                <div class="benefit">
+                <div class="benefit card">
                     <span class="benefit-icon">🚗</span>
                     <h3>Extend Car Life</h3>
                     <p>Regular maintenance keeps your car running longer. Catch small problems before they become expensive.</p>
                 </div>
-                <div class="benefit">
+                <div class="benefit card">
                     <span class="benefit-icon">⚡</span>
                     <h3>Better Decisions</h3>
                     <p>Make informed choices when buying or selling. Understand what features and conditions really matter.</p>
@@ -235,7 +238,7 @@
         </div>
     </section>
 
-    <section id="topics" class="topics-section" style="background: var(--bg-light);">
+    <section id="topics" class="topics-section" style="background: var(--color-bg-secondary);">
         <div class="container">
             <h2>What Would You Like to Learn?</h2>
             <p class="section-intro">
@@ -247,7 +250,7 @@
                 <div class="carousel-container">
                     <div class="carousel-track">
                         <div class="carousel-slide active" data-index="0">
-                            <article class="topic-card">
+                            <article class="topic-card feature-card">
                                 <a href="anatomy.html" class="card-link">
                                     <div class="card-image">
                                         <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80" alt="Car engine components">
@@ -261,7 +264,7 @@
                             </article>
                         </div>
                         <div class="carousel-slide" data-index="1">
-                            <article class="topic-card">
+                            <article class="topic-card feature-card">
                                 <a href="systems.html" class="card-link">
                                     <div class="card-image">
                                         <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Car mechanical systems">
@@ -275,7 +278,7 @@
                             </article>
                         </div>
                         <div class="carousel-slide" data-index="2">
-                            <article class="topic-card">
+                            <article class="topic-card feature-card">
                                 <a href="maintenance.html" class="card-link">
                                     <div class="card-image">
                                         <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&q=80" alt="Car maintenance">
@@ -289,7 +292,7 @@
                             </article>
                         </div>
                         <div class="carousel-slide" data-index="3">
-                            <article class="topic-card">
+                            <article class="topic-card feature-card">
                                 <a href="warnings.html" class="card-link">
                                     <div class="card-image">
                                         <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Dashboard warning lights">
@@ -303,7 +306,7 @@
                             </article>
                         </div>
                         <div class="carousel-slide" data-index="4">
-                            <article class="topic-card">
+                            <article class="topic-card feature-card">
                                 <a href="emergency.html" class="card-link">
                                     <div class="card-image">
                                         <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80" alt="Car emergency roadside assistance">
@@ -334,7 +337,7 @@
             <!-- Mobile Horizontal Scroll -->
             <div class="mobile-category-scroll">
                 <div class="mobile-category-container">
-                    <article class="mobile-category-card">
+                    <article class="mobile-category-card card">
                         <a href="anatomy.html" class="card-link">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80" alt="Car engine components">
@@ -347,7 +350,7 @@
                         </a>
                     </article>
                     
-                    <article class="mobile-category-card">
+                    <article class="mobile-category-card card">
                         <a href="systems.html" class="card-link">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=800&q=80" alt="Car mechanical systems">
@@ -360,7 +363,7 @@
                         </a>
                     </article>
                     
-                    <article class="mobile-category-card">
+                    <article class="mobile-category-card card">
                         <a href="maintenance.html" class="card-link">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=800&q=80" alt="Car maintenance">
@@ -373,7 +376,7 @@
                         </a>
                     </article>
                     
-                    <article class="mobile-category-card">
+                    <article class="mobile-category-card card">
                         <a href="warnings.html" class="card-link">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Dashboard warning lights">
@@ -386,7 +389,7 @@
                         </a>
                     </article>
                     
-                    <article class="mobile-category-card">
+                    <article class="mobile-category-card card">
                         <a href="emergency.html" class="card-link">
                             <div class="card-image">
                                 <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&q=80" alt="Car emergency roadside assistance">
